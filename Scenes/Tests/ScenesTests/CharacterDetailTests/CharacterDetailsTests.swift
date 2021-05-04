@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import RickAndMorty
+@testable import Scenes
+@testable import DesignSystem
 
 class CharacterDetailsTests: XCTestCase {
     
@@ -21,37 +22,37 @@ class CharacterDetailsTests: XCTestCase {
     
     func testGetCharacterInfoWithSuccess() {
         // given
-        let inputCharacter: Character = .dummy
+        let inputCharacter: RMCharacter = .dummy
         let viewModel = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpySuccess())
         
         // when
         viewModel.getCharacterInfo()
         
         // then
-        XCTAssertEqual(viewModel.state, .loaded(inputCharacter, buttonAction: .delete))
+        XCTAssertEqual(viewModel.state, .loaded(inputCharacter, buttonAction: KeychainButton.Action.delete))
     }
     
     func testGetCharacterInfoWithFailure() {
        // given
-       let inputCharacter: Character = .dummy
+       let inputCharacter: RMCharacter = .dummy
        let viewModel = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpyFailure())
        
        // when
        viewModel.getCharacterInfo()
        
        // then
-       XCTAssertEqual(viewModel.state, .loaded(inputCharacter, buttonAction: .add))
+       XCTAssertEqual(viewModel.state, .loaded(inputCharacter, buttonAction: KeychainButton.Action.add))
     }
     
     func testHandleKeychainButtonActionForFailure() {
         // given
-        let inputCharacter: Character = .dummy
+        let inputCharacter: RMCharacter = .dummy
         let viewModelAddAction = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpyFailure())
         let viewModelDeleteAction = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpyFailure())
         
         // when
-        viewModelAddAction.handleKeychainButtonAction(.add)
-        viewModelDeleteAction.handleKeychainButtonAction(.delete)
+        viewModelAddAction.handleKeychainButtonAction(KeychainButton.Action.add)
+        viewModelDeleteAction.handleKeychainButtonAction(KeychainButton.Action.delete)
         
         // then
         XCTAssertEqual(viewModelAddAction.state, .error)
@@ -60,11 +61,11 @@ class CharacterDetailsTests: XCTestCase {
     
     func testHandleKeychainAddButtonActionForSuccess() {
         // given
-        let inputCharacter: Character = .dummy
+        let inputCharacter: RMCharacter = .dummy
         let viewModelAddAction = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpySuccess())
         
         // when
-        viewModelAddAction.handleKeychainButtonAction(.add)
+        viewModelAddAction.handleKeychainButtonAction(KeychainButton.Action.add)
         
         // then
         XCTAssertEqual(viewModelAddAction.state, .addedToFavorites)
@@ -72,11 +73,11 @@ class CharacterDetailsTests: XCTestCase {
     
     func testHandleKeychainRemoveButtonActionForSuccess() {
         // given
-        let inputCharacter: Character = .dummy
+        let inputCharacter: RMCharacter = .dummy
         let viewModelAddAction = CharacterDetailViewModel(character: inputCharacter, keychainHandler: KeychainSpySuccess())
         
         // when
-        viewModelAddAction.handleKeychainButtonAction(.delete)
+        viewModelAddAction.handleKeychainButtonAction(KeychainButton.Action.delete)
         
         // then
         XCTAssertEqual(viewModelAddAction.state, .removeFromFavorites)

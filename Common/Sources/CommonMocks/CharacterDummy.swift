@@ -7,10 +7,10 @@
 //
 
 import Foundation
-@testable import RickAndMorty
+import Common
 
-extension Character {
-    static var dummy: Character {
+public extension Character {
+    public static var dummy: Character {
         .init(
             id: 0,
             name: "",
@@ -29,7 +29,7 @@ extension Character {
     }
 }
 
-extension Character: Equatable {
+public extension Character: Equatable {
     public static func == (lhs: Character, rhs: Character) -> Bool {
         return lhs.id == rhs.id &&
             lhs.name == rhs.name

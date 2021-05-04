@@ -1,5 +1,5 @@
 //
-//  KeychainSpyFailure.swift
+//  KeychainSpySuccess.swift
 //  RickAndMortyTests
 //
 //  Created by Gabriel Augusto Marson on 05/08/20.
@@ -7,13 +7,14 @@
 //
 
 import Foundation
-@testable import RickAndMorty
 import KeychainSwift
+import Persistence
+import Common
 
-final class KeychainSpyFailure: KeychainCRUD {
+final class KeychainSpySuccess: KeychainCRUD {
     
     var keychain: KeychainSwift = .init()
-    var selectedError: KeychainErrors = .unknown
+    
     var isInDatabaseCalled = false
     var saveCalled = false
     var retrieveCalled = false
@@ -22,27 +23,27 @@ final class KeychainSpyFailure: KeychainCRUD {
     
     func isInDatabase(id: String) -> Bool {
         isInDatabaseCalled = true
-        return false
+        return true
     }
     
-    func save(character: Character, completionHandler: @escaping (Result<Void, KeychainErrors>) -> Void) {
+    func save(character: RMCharacter, completionHandler: @escaping (Result<Void, KeychainErrors>) -> Void) {
         saveCalled = true
-        completionHandler(.failure(selectedError))
+        completionHandler(.success(()))
     }
     
-    func retrieve(id: String, completionHandler: @escaping (Result<Character, KeychainErrors>) -> Void) {
+    func retrieve(id: String, completionHandler: @escaping (Result<RMCharacter, KeychainErrors>) -> Void) {
         retrieveCalled = true
-        completionHandler(.failure(selectedError))
+        completionHandler(.success(.dummy))
     }
     
     func remove(id: String, completionHandler: @escaping (Result<Void, KeychainErrors>) -> Void) {
         removeCalled = true
-        completionHandler(.failure(selectedError))
+        completionHandler(.success(()))
     }
     
-    func retrieveAll() -> [Character] {
+    func retrieveAll() -> [RMCharacter] {
         retrieveCalled = true
-        return []
+        return [.dummy]
     }
     
 }
