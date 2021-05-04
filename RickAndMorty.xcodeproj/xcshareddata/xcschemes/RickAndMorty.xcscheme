@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CodeGeneration"
-               BuildableName = "CodeGeneration"
-               BlueprintName = "CodeGeneration"
-               ReferencedContainer = "container:CodeGeneration">
+               BlueprintIdentifier = "Common"
+               BuildableName = "Common"
+               BlueprintName = "Common"
+               ReferencedContainer = "container:Common">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -42,10 +42,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Common"
-               BuildableName = "Common"
-               BlueprintName = "Common"
-               ReferencedContainer = "container:Common">
+               BlueprintIdentifier = "CodeGeneration"
+               BuildableName = "CodeGeneration"
+               BlueprintName = "CodeGeneration"
+               ReferencedContainer = "container:CodeGeneration">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

@@ -9,6 +9,8 @@
 import XCTest
 @testable import Scenes
 @testable import DesignSystem
+@testable import Persistence
+@testable import Common
 
 class CharacterDetailsTests: XCTestCase {
     

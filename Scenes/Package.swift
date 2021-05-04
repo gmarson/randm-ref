@@ -22,7 +22,11 @@ let package = Package(
     targets: [
         .target(
             name: "Scenes",
-            dependencies: []),
+            dependencies: [
+                "DesignSystem",
+                "Persistence",
+            ]
+        ),
         .testTarget(
             name: "ScenesTests",
             dependencies: [

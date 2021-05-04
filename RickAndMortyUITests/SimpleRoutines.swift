@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import SnapshotTesting
 
 class SimpleRoutines: BaseXCTestCase {
 

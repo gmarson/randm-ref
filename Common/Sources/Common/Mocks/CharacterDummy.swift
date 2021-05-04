@@ -7,10 +7,11 @@
 //
 
 import Foundation
-import Common
 
-public extension Character {
-    public static var dummy: Character {
+#if DEBUG
+
+public extension RMCharacter {
+    static var dummy: RMCharacter {
         .init(
             id: 0,
             name: "",
@@ -29,9 +30,11 @@ public extension Character {
     }
 }
 
-public extension Character: Equatable {
-    public static func == (lhs: Character, rhs: Character) -> Bool {
+extension RMCharacter: Equatable {
+    public static func == (lhs: RMCharacter, rhs: RMCharacter) -> Bool {
         return lhs.id == rhs.id &&
             lhs.name == rhs.name
     }
 }
+
+#endif

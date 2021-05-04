@@ -23,8 +23,6 @@
 		EC8FCCF724D3645D009414F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8FCCF624D3645D009414F8 /* Assets.xcassets */; };
 		EC8FCCFA24D3645D009414F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8FCCF824D3645D009414F8 /* LaunchScreen.storyboard */; };
 		EC8FCD5024D3A8CC009414F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8FCD4F24D3A8CC009414F8 /* AppDelegate.swift */; };
-		ECA2AF4524DB8FCA009EE6B0 /* CoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2AF4424DB8FCA009EE6B0 /* CoordinatorSpy.swift */; };
-		ECA2AF4924DB90A7009EE6B0 /* StateHandlerSpies.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2AF4824DB90A7009EE6B0 /* StateHandlerSpies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +72,6 @@
 		EC8FCD1124D3645D009414F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8FCD2D24D37E6C009414F8 /* Character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Character.json; sourceTree = "<group>"; };
 		EC8FCD4F24D3A8CC009414F8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECA2AF4424DB8FCA009EE6B0 /* CoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorSpy.swift; sourceTree = "<group>"; };
-		ECA2AF4824DB90A7009EE6B0 /* StateHandlerSpies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHandlerSpies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,36 +121,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4C4A11B2640A1A8002F25AD /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				A4C4A11C2640A1A8002F25AD /* Tests */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		A4C4A11C2640A1A8002F25AD /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		EC26D4B424D4777800A33A13 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		EC8AC9C524DB7E650085B652 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				ECA2AF4724DB9073009EE6B0 /* Spies */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		EC8FCCDE24D3645B009414F8 = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				EC8FCD4F24D3A8CC009414F8 /* AppDelegate.swift */,
-				A4C4A11B2640A1A8002F25AD /* DesignSystem */,
-				EC26D4B424D4777800A33A13 /* Components */,
-				EC8FCD3424D38315009414F8 /* Coordinators */,
-				EC8FCD2024D367E5009414F8 /* Scenes */,
 				EC8FCD1E24D364E3009414F8 /* Resources */,
 			);
 			path = RickAndMorty;
@@ -192,7 +154,6 @@
 		EC8FCD0324D3645D009414F8 /* RickAndMortyTests */ = {
 			isa = PBXGroup;
 			children = (
-				EC8AC9C524DB7E650085B652 /* Common */,
 				EC8FCD2C24D37E5C009414F8 /* JSONs */,
 				EC8FCD0624D3645D009414F8 /* Info.plist */,
 			);
@@ -221,13 +182,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EC8FCD2024D367E5009414F8 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
 		EC8FCD2C24D37E5C009414F8 /* JSONs */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,22 +189,6 @@
 				EC8FCD2D24D37E6C009414F8 /* Character.json */,
 			);
 			path = JSONs;
-			sourceTree = "<group>";
-		};
-		EC8FCD3424D38315009414F8 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		ECA2AF4724DB9073009EE6B0 /* Spies */ = {
-			isa = PBXGroup;
-			children = (
-				ECA2AF4424DB8FCA009EE6B0 /* CoordinatorSpy.swift */,
-				ECA2AF4824DB90A7009EE6B0 /* StateHandlerSpies.swift */,
-			);
-			path = Spies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,8 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA2AF4524DB8FCA009EE6B0 /* CoordinatorSpy.swift in Sources */,
-				ECA2AF4924DB90A7009EE6B0 /* StateHandlerSpies.swift in Sources */,
 				EC6255F224D5B4AF00B45B11 /* JSONReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

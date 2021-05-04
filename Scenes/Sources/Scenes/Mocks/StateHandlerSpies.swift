@@ -7,7 +7,8 @@
 //
 
 import Foundation
-@testable import RickAndMorty
+
+#if DEBUG
 
 final class StateHandlerSpies {
     var didChangeStateCharacterViewModelsCalled = false
@@ -42,3 +43,5 @@ extension StateHandlerSpies: SavedCharactersStateHandler {
     }
     
 }
+
+#endif

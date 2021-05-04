@@ -27,19 +27,10 @@ let package = Package(
                 "Common"
             ]
         ),
-        .target(
-            name: "PersistenceMocks",
-            dependencies: [
-                "KeychainSwift",
-                "Common",
-                "Persistence",
-            ]
-        ),
         .testTarget(
             name: "PersistenceTests",
             dependencies: [
-                "Persistence",
-                "PersistenceMocks"
+                "Persistence"
             ]
         )
     ]

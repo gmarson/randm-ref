@@ -7,7 +7,8 @@
 //
 
 import Foundation
-@testable import RickAndMorty
+
+#if DEBUG
 
 final class CoordinatorSpy: Coordinator {
     
@@ -30,3 +31,5 @@ extension CoordinatorSpy: CoordinatorKeychainNotification {
         didReceiveWarningAboutKeychainChangesCalled = true
     }
 }
+
+#endif
