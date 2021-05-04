@@ -10,7 +10,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "DesignSystem",
-            targets: ["DesignSystem"]),
+            targets: ["DesignSystem"]
+        ),
     ],
     dependencies: [
         .package(
@@ -22,13 +23,11 @@ let package = Package(
         .package(path: "CodeGeneration")
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "DesignSystem",
             dependencies: [
-                "Common",
-                "CodeGeneration"
+                "Common"
+                //"CodeGeneration" TODO: Figure out how to make it work
             ]
         ),
         .testTarget(

@@ -23,12 +23,6 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 
 
 // MARK: - AutoEquatable for classes, protocols, structs
-// MARK: - KeyValueModel AutoEquatable
-extension KeyValueModel: Equatable {}
-public func == (lhs: KeyValueModel, rhs: KeyValueModel) -> Bool {
-    guard lhs.key == rhs.key else { return false }
-    guard lhs.value == rhs.value else { return false }
-    return true
-}
+
 
 // MARK: - AutoEquatable for Enums

@@ -65,9 +65,6 @@
 		A41FBED3263F2CEB001417E9 /* UserRoutines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoutines.swift; sourceTree = "<group>"; };
 		A41FBED5263F3847001417E9 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A49E111B2640449600322815 /* ComplexRoutines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexRoutines.swift; sourceTree = "<group>"; };
-		A4C4A11D2640A1A8002F25AD /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
-		A4C4A1202640A1A8002F25AD /* testDesignSystemPaddings.1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = testDesignSystemPaddings.1.txt; sourceTree = "<group>"; };
-		A4C4A1212640A1A8002F25AD /* testDesignSystemFonts.1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = testDesignSystemFonts.1.txt; sourceTree = "<group>"; };
 		EC6255F124D5B4AF00B45B11 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		EC8AC9C124DB7D280085B652 /* CharacterDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTests.swift; sourceTree = "<group>"; };
 		EC8AC9C324DB7E5E0085B652 /* KeychainSpySuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSpySuccess.swift; sourceTree = "<group>"; };
@@ -145,27 +142,8 @@
 		A4C4A11C2640A1A8002F25AD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A4C4A11D2640A1A8002F25AD /* DesignSystemTests.swift */,
-				A4C4A11E2640A1A8002F25AD /* __Snapshots__ */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		A4C4A11E2640A1A8002F25AD /* __Snapshots__ */ = {
-			isa = PBXGroup;
-			children = (
-				A4C4A11F2640A1A8002F25AD /* DesignSystemTests */,
-			);
-			path = __Snapshots__;
-			sourceTree = "<group>";
-		};
-		A4C4A11F2640A1A8002F25AD /* DesignSystemTests */ = {
-			isa = PBXGroup;
-			children = (
-				A4C4A1202640A1A8002F25AD /* testDesignSystemPaddings.1.txt */,
-				A4C4A1212640A1A8002F25AD /* testDesignSystemFonts.1.txt */,
-			);
-			path = DesignSystemTests;
 			sourceTree = "<group>";
 		};
 		EC26D4B424D4777800A33A13 /* Components */ = {

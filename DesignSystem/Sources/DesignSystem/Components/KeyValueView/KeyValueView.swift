@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CodeGeneration
 
-public struct KeyValueModel: ViewCodeModel, AutoInitiable {
+public struct KeyValueModel: ViewCodeModel {
     let key: String
     let value: String
 
