@@ -11,8 +11,11 @@
 		A41FBED1263F2B87001417E9 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED0263F2B87001417E9 /* BaseXCTestCase.swift */; };
 		A41FBED4263F2CEB001417E9 /* UserRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED3263F2CEB001417E9 /* UserRoutines.swift */; };
 		A41FBED6263F3847001417E9 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED5263F3847001417E9 /* Identifiers.swift */; };
-		A49D396B2641C2A200519654 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = A49D396A2641C2A200519654 /* Modules */; };
+		A49D3B392642000900519654 /* Scenes in Frameworks */ = {isa = PBXBuildFile; productRef = A49D3B382642000900519654 /* Scenes */; };
 		A49E111C2640449600322815 /* ComplexRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E111B2640449600322815 /* ComplexRoutines.swift */; };
+		A4B6FF432642035C00565CD3 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A4B6FF422642035C00565CD3 /* DesignSystem */; };
+		A4B6FF452642036A00565CD3 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = A4B6FF442642036A00565CD3 /* NetworkLayer */; };
+		A4B6FF472642037B00565CD3 /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = A4B6FF462642037B00565CD3 /* Persistence */; };
 		EC2002A424D5BE8A0012DE49 /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = EC8FCD2D24D37E6C009414F8 /* Character.json */; };
 		EC6255F224D5B4AF00B45B11 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6255F124D5B4AF00B45B11 /* JSONReader.swift */; };
 		EC8AC9C424DB7E5E0085B652 /* KeychainSpySuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8AC9C324DB7E5E0085B652 /* KeychainSpySuccess.swift */; };
@@ -90,7 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A49D396B2641C2A200519654 /* Modules in Frameworks */,
+				A4B6FF472642037B00565CD3 /* Persistence in Frameworks */,
+				A4B6FF452642036A00565CD3 /* NetworkLayer in Frameworks */,
+				A49D3B392642000900519654 /* Scenes in Frameworks */,
+				A4B6FF432642035C00565CD3 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +352,10 @@
 			);
 			name = RickAndMorty;
 			packageProductDependencies = (
-				A49D396A2641C2A200519654 /* Modules */,
+				A49D3B382642000900519654 /* Scenes */,
+				A4B6FF422642035C00565CD3 /* DesignSystem */,
+				A4B6FF442642036A00565CD3 /* NetworkLayer */,
+				A4B6FF462642037B00565CD3 /* Persistence */,
 			);
 			productName = RickAndMorty;
 			productReference = EC8FCCE724D3645B009414F8 /* RickAndMorty.app */;
@@ -481,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Adds support for Apple Silicon brew directory\nunset SDKROOT\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\n# Modules/Sources/CodeGeneration/Sourcery.sh\n";
+			shellScript = "# Adds support for Apple Silicon brew directory\nunset SDKROOT\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\n#Modules/Sources/CodeGeneration/Sourcery.sh\n";
 		};
 		EC8FCD1F24D36535009414F8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -865,9 +874,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A49D396A2641C2A200519654 /* Modules */ = {
+		A49D3B382642000900519654 /* Scenes */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Modules;
+			productName = Scenes;
+		};
+		A4B6FF422642035C00565CD3 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		A4B6FF442642036A00565CD3 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		A4B6FF462642037B00565CD3 /* Persistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Persistence;
 		};
 /* End XCSwiftPackageProductDependency section */
 

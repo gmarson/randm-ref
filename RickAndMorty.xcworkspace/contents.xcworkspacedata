@@ -2,7 +2,22 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Modules">
+      location = "group:Scenes">
+   </FileRef>
+   <FileRef
+      location = "group:NetworkLayer">
+   </FileRef>
+   <FileRef
+      location = "group:DesignSystem">
+   </FileRef>
+   <FileRef
+      location = "group:Persistence">
+   </FileRef>
+   <FileRef
+      location = "group:Common">
+   </FileRef>
+   <FileRef
+      location = "group:CodeGeneration">
    </FileRef>
    <FileRef
       location = "group:RickAndMorty.xcodeproj">
