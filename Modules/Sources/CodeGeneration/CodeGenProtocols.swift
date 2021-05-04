@@ -12,8 +12,3 @@ public protocol AutoEquatable { }
 
 // MARK: - Init
 public protocol AutoInitiable { }
-
-// MARK: - Mockable
-public protocol AutoMockable { }
-
-

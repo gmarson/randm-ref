@@ -481,7 +481,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Adds support for Apple Silicon brew directory\nunset SDKROOT\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nexport PATH=\"$PATH:../Modules/Sources/CodeGeneration/Templates\"\npwd\n\n#sourcery --sources ../ --templates Modules/Sources/CodeGeneration/Templates --output Generated\n\nModules/Sources/CodeGeneration/Sourcery.sh\n";
+			shellScript = "# Adds support for Apple Silicon brew directory\nunset SDKROOT\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\n# Modules/Sources/CodeGeneration/Sourcery.sh\n";
 		};
 		EC8FCD1F24D36535009414F8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

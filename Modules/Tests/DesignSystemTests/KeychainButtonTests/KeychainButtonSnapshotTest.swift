@@ -8,7 +8,7 @@
 
 import XCTest
 import SnapshotTesting
-@testable import RickAndMorty
+@testable import DesignSystem
 
 final class KeychainButtonSnapshotTest: XCTestCase {
 

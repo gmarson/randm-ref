@@ -10,13 +10,10 @@ import Foundation
 import UIKit
 import CodeGeneration
 
-public struct KeyValueModel: ViewCodeModel, AutoInitiable {
+public struct KeyValueModel: ViewCodeModel, AutoInitiable, AutoEquatable {
     let key: String
     let value: String
 
-// sourcery:inline:auto:KeyValueModel.Init
-
-// MARK: - KeyValueModel custom init
 	public init(
 		key: String,
 		value: String
@@ -24,7 +21,7 @@ public struct KeyValueModel: ViewCodeModel, AutoInitiable {
         self.key = key
         self.value = value
     }
-// sourcery:end
+
 }
 
 public final class KeyValueView: ViewCode<KeyValueModel> {
