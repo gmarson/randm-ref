@@ -7,6 +7,6 @@
 
 import Foundation
 
-extension String {
+public extension String {
     var differentFromUnknown: Bool { self != "unknown" }
 }

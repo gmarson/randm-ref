@@ -19,7 +19,7 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
     
     var applicationKeychain: KeychainCRUD
     
-    init(
+    public init(
         window: UIWindow,
         keychain: KeychainCRUD = KeychainHandler()
     ) {
@@ -30,7 +30,7 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
         savedCharactersCoordinator = .init(tabBarController: rootViewController)
     }
     
-    func start() {
+    public func start() {
         
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
@@ -63,7 +63,6 @@ extension ApplicationCoordinator: CoordinatorKeychainNotification {
 
 extension ApplicationCoordinator: SearchCoordinatorToAppCoordinatorDelegate { }
 extension ApplicationCoordinator: SavedCoordinatorToAppCoordinatorDelegate { }
-
 
 private extension ApplicationCoordinator {
     func configForUITest() {

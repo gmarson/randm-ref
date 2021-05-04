@@ -14,7 +14,7 @@ protocol SavedCharactersStateHandler: AnyObject {
     func didChangeState(_ state: SavedCharactersViewModel.State)
 }
 
-protocol SavedCharactersViewModelCoordinatorDelegate: Coordinator {
+protocol SavedCharactersViewModelCoordinatorDelegate: Coordinator, AnyObject {
     func navigateToDetail(character: RMCharacter)
 }
 

@@ -15,7 +15,7 @@ protocol SearchStateHandler: AnyObject {
     func didLoadImageForCharacter(at index: IndexPath, data: Data)
 }
 
-protocol SearchCharactersViewModelCoordinatorDelegate: Coordinator {
+protocol SearchCharactersViewModelCoordinatorDelegate: Coordinator, AnyObject {
     func navigateToDetail(character: RMCharacter)
 }
 

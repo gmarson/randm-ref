@@ -8,8 +8,9 @@
 
 import UIKit
 import Persistence
+import Common
 
-protocol SavedCoordinatorToAppCoordinatorDelegate: Coordinator {
+protocol SavedCoordinatorToAppCoordinatorDelegate: Coordinator, AnyObject {
     var applicationKeychain: KeychainCRUD { get }
 }
 
@@ -50,7 +51,7 @@ final class SavedCharactersCoordinator: Coordinator {
 }
 
 extension SavedCharactersCoordinator: SavedCharactersViewModelCoordinatorDelegate {
-    func navigateToDetail(character: Character) {
+    func navigateToDetail(character: RMCharacter) {
         guard let viewController = buildDetailViewController(character) else { return }
         
         navigationController.present(
@@ -60,7 +61,7 @@ extension SavedCharactersCoordinator: SavedCharactersViewModelCoordinatorDelegat
         )
     }
     
-    private func buildDetailViewController(_ character: Character) -> CharacterDetailViewController? {
+    private func buildDetailViewController(_ character: RMCharacter) -> CharacterDetailViewController? {
         guard let keychain = parentCoordinatorDelegate?.applicationKeychain else { return nil }
         let viewModel = CharacterDetailViewModel(character: character, keychainHandler: keychain)
         let viewController = CharacterDetailViewController(viewModel: viewModel)

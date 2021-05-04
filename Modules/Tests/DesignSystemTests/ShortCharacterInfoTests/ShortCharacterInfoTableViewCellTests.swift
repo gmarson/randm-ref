@@ -14,7 +14,7 @@ class ShortCharacterInfoTableViewCellTests: XCTestCase {
 
     let tableViewCellSize: CGRect = .init(origin: .zero, size: .init(width: 500, height: 200))
     
-    //fix this test
+    // TODO fix this test
 //    func testExampleTableViewCellWithSnapshot() throws {
 //        // given
 //        let character = try JSONReader.read(from: "Character", outputType: Character.self)

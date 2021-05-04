@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DesignSystem
 
 public final class SavedCharactersViewController: UIViewController {
 
@@ -70,7 +71,7 @@ public final class SavedCharactersViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         viewModel.getAllCharacters()
@@ -101,17 +102,25 @@ public final class SavedCharactersViewController: UIViewController {
 }
 
 extension SavedCharactersViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.charactersCount
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let character = viewModel.characters(at: indexPath),
             let cell = tableView.dequeueReusableCell(withIdentifier: ShortCharacterInfoTableViewCell.reuseIdentifier, for: indexPath) as? ShortCharacterInfoTableViewCell else {
                 return UITableViewCell()
         }
         
-        cell.updateModel(model: .init(character: character))
+        cell.updateModel(
+            model: .init(
+                name: character.name,
+                origin: character.origin.name,
+                gender: character.gender,
+                status: character.status
+            )
+        )
+        
         if let data = character.imageData {
             cell.updateImage(image: UIImage(data: data) ?? #imageLiteral(resourceName: "rick"))
         }
@@ -122,22 +131,22 @@ extension SavedCharactersViewController: UITableViewDataSource {
 }
 
 extension SavedCharactersViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.goToDetail(at: indexPath)
     }
 }
 
 extension SavedCharactersViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.resignFirstResponder()
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
 }

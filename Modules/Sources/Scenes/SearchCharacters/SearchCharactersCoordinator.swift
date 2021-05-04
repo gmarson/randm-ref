@@ -10,7 +10,7 @@ import UIKit
 import Persistence
 import Common
 
-protocol SearchCoordinatorToAppCoordinatorDelegate: Coordinator {
+protocol SearchCoordinatorToAppCoordinatorDelegate: Coordinator, AnyObject {
     var applicationKeychain: KeychainCRUD { get }
 }
 

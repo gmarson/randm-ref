@@ -41,5 +41,4 @@ extension StateHandlerSpies: SavedCharactersStateHandler {
         didChangeStateSavedViewModelCalled = true
     }
     
-    
 }

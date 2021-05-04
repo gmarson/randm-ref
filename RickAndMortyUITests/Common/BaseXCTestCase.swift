@@ -16,6 +16,7 @@ class BaseXCTestCase: XCTestCase {
     lazy var identifiers: Identifiers = .init()
     
     override func setUpWithError() throws {
+        try super.setUpWithError()
         continueAfterFailure = false
         app.launchArguments = ["enable-testing"]
         app.launch()

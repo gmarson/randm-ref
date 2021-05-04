@@ -8,6 +8,7 @@
 
 import UIKit
 import DesignSystem
+import Common
 
 public final class CharacterDetailViewController: UIViewController {
     
@@ -79,7 +80,7 @@ public final class CharacterDetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
@@ -126,24 +127,24 @@ public final class CharacterDetailViewController: UIViewController {
 
 extension CharacterDetailViewController: CharacterDetailViewModelStateHandler {
     
-    private func fillScreen(character: Character) {
+    private func fillScreen(character: RMCharacter) {
         profileName.text = character.name
         
-        if character.origin.name.notUnknown() {
+        if character.origin.name.differentFromUnknown {
             originInfoView.updateModel(model: .init(key: "Origin: ", value: character.origin.name))
         }
         
-        if character.location.name.notUnknown() {
+        if character.location.name.differentFromUnknown {
             locationInfoView.updateModel(model: .init(key: "Location: ", value: character.location.name))
         }
         
-        if character.gender.notUnknown() {
+        if character.gender.differentFromUnknown {
             genderInfoView.updateModel(model: .init(key: "Gender: ", value: character.gender))
         }
         
-        if character.status.notUnknown() {
+        if character.status.differentFromUnknown {
             statusInfoView.updateModel(model: .init(key: "Status: ", value: character.status))
-            //TODO create constant class for strings
+            // TODO create constant class for strings
         }
         
         if let data = character.imageData {
@@ -164,14 +165,14 @@ extension CharacterDetailViewController: CharacterDetailViewModelStateHandler {
             favoriteButton.updateModel(model: .init(action: .add))
         case .error:
             break
-            //TODO show message error
+            // TODO show message error
         }
     }
     
 }
 
 extension CharacterDetailViewController: KeychainButtonDelegate {
-    func didTouchUpInside(_ action: KeychainButton.Action) {
+    public func didTouchUpInside(_ action: KeychainButton.Action) {
         viewModel.handleKeychainButtonAction(action)
     }
     

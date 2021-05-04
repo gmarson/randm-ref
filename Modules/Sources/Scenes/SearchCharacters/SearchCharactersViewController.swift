@@ -45,7 +45,7 @@ public final class SearchCharactersViewController: UIViewController {
     private func setupViews() {
         title = "Characters"
         
-        //navigationItem.titleView = searchBar
+        // navigationItem.titleView = searchBar
         
         view.addSubview(tableView)
         view.addConstraints([

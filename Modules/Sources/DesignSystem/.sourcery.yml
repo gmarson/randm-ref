@@ -1,0 +1,7 @@
+sources:
+    - ../CodeGeneration/CodeGenProtocols.swift
+    - ./
+templates:
+  - ../CodeGeneration/Templates
+output:
+  Generated

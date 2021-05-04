@@ -22,7 +22,7 @@ class UserRoutines {
         app.swipeDown(velocity: .fast)
     }
     
-    func tapInNthPositionOfCell(_ n : Int, wait: TimeInterval = 0) {
+    func tapInNthPositionOfCell(_ n: Int, wait: TimeInterval = 0) {
         let table = app.tables.element(boundBy: 0)
         let cellAt = table.cells.element(boundBy: n)
         

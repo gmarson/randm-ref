@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CoordinatorKeychainNotification: Coordinator {
+protocol CoordinatorKeychainNotification: Coordinator, AnyObject {
     func notifyAboutKeychainChanges(sender: inout CoordinatorKeychainNotification?)
     func didReceiveWarningAboutKeychainChanges(sender: inout CoordinatorKeychainNotification?)
 }

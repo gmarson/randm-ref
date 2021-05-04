@@ -102,7 +102,7 @@ class CharacterDetailsTests: XCTestCase {
     
 }
 
-//swiftlint:disable pattern_matching_keywords
+// swiftlint:disable pattern_matching_keywords
 extension CharacterDetailViewModel.State: Equatable {
     public static func == (lhs: CharacterDetailViewModel.State, rhs: CharacterDetailViewModel.State) -> Bool {
         switch (lhs, rhs) {

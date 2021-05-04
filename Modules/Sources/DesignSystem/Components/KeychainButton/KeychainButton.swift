@@ -16,6 +16,10 @@ public protocol KeychainButtonDelegate: AnyObject {
 public struct KeychainButtonModel: ViewCodeModel {
     
     var action: KeychainButton.Action
+    
+    public init(action: KeychainButton.Action) {
+        self.action = action
+    }
 }
 
 public final class KeychainButton: ViewCode<KeychainButtonModel> {
@@ -32,7 +36,7 @@ public final class KeychainButton: ViewCode<KeychainButtonModel> {
     
     private let c = Constants()
     
-    weak var delegate: KeychainButtonDelegate?
+    public weak var delegate: KeychainButtonDelegate?
     
     private lazy var button: UIButton = {
         let button = UIButton()

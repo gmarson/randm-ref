@@ -11,7 +11,7 @@
 		A41FBED1263F2B87001417E9 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED0263F2B87001417E9 /* BaseXCTestCase.swift */; };
 		A41FBED4263F2CEB001417E9 /* UserRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED3263F2CEB001417E9 /* UserRoutines.swift */; };
 		A41FBED6263F3847001417E9 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FBED5263F3847001417E9 /* Identifiers.swift */; };
-		A45386AE2640908B00AE6ABF /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = A45386AD2640908B00AE6ABF /* Modules */; };
+		A49D396B2641C2A200519654 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = A49D396A2641C2A200519654 /* Modules */; };
 		A49E111C2640449600322815 /* ComplexRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E111B2640449600322815 /* ComplexRoutines.swift */; };
 		EC2002A424D5BE8A0012DE49 /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = EC8FCD2D24D37E6C009414F8 /* Character.json */; };
 		EC6255F224D5B4AF00B45B11 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6255F124D5B4AF00B45B11 /* JSONReader.swift */; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A45386AE2640908B00AE6ABF /* Modules in Frameworks */,
+				A49D396B2641C2A200519654 /* Modules in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC8FCD1424D3645D009414F8 /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
+				A416A0F32641A18D00ADBC79 /* Sourcery */,
 				EC8FCCE324D3645B009414F8 /* Sources */,
 				EC8FCCE424D3645B009414F8 /* Frameworks */,
 				EC8FCCE524D3645B009414F8 /* Resources */,
@@ -345,7 +346,7 @@
 			);
 			name = RickAndMorty;
 			packageProductDependencies = (
-				A45386AD2640908B00AE6ABF /* Modules */,
+				A49D396A2641C2A200519654 /* Modules */,
 			);
 			productName = RickAndMorty;
 			productReference = EC8FCCE724D3645B009414F8 /* RickAndMorty.app */;
@@ -464,6 +465,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A416A0F32641A18D00ADBC79 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nunset SDKROOT\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nexport PATH=\"$PATH:../Modules/Sources/CodeGeneration/Templates\"\npwd\n\n#sourcery --sources ../ --templates Modules/Sources/CodeGeneration/Templates --output Generated\n\nModules/Sources/CodeGeneration/Sourcery.sh\n";
+		};
 		EC8FCD1F24D36535009414F8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -480,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -846,7 +865,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A45386AD2640908B00AE6ABF /* Modules */ = {
+		A49D396A2641C2A200519654 /* Modules */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Modules;
 		};

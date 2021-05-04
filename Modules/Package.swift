@@ -25,6 +25,7 @@ let package = Package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing",
             from: "1.9.0"
         )
+        
     ],
     targets: [
         
@@ -44,12 +45,22 @@ let package = Package(
         ),
         
         .target(
+            name: "CodeGeneration",
+            dependencies: [],
+            exclude: [
+                "*.sh",
+                "Templates/*.swifttemplate"
+            ]
+        ),
+        
+        .target(
             name: "DesignSystem",
-            dependencies: ["Common"]
+            dependencies: ["Common", "CodeGeneration"]
         ),
         .testTarget(
             name: "DesignSystemTests",
-            dependencies: ["SnapshotTesting"]
+            dependencies: ["SnapshotTesting"],
+            exclude: ["*.png"]
         ),
         
         .target(

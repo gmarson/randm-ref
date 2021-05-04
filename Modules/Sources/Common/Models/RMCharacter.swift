@@ -16,7 +16,7 @@ public struct RMCharacter: Codable {
     let type: String
     public let gender: String
     public let origin: NameAndUrl
-    let location: NameAndUrl
+    public let location: NameAndUrl
     public let image: String
     let episode: [String]
     let url: String
@@ -26,10 +26,8 @@ public struct RMCharacter: Codable {
     
 }
 
-//TODO: do a DTO
+// TODO: do a DTO
 public struct RMCharacterDTO {
-    
-    
     
 }
 
