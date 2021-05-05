@@ -82,6 +82,7 @@ extension SearchCharactersViewController: UITableViewDelegate {
 }
 
 extension SearchCharactersViewController: UITableViewDataSource {
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.charactersCount
     }
@@ -126,8 +127,6 @@ extension SearchCharactersViewController: SearchStateHandler {
             case .loaded:
                 UIView.performWithoutAnimation {
                     self?.tableView.reloadData()
-                    self?.tableView.beginUpdates()
-                    self?.tableView.endUpdates()
                 }
                 self?.customActivityIndicator.stopAnimating()
             case .error:
