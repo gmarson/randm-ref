@@ -33,7 +33,7 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
     public func start() {
         
         #if DEBUG
-        if CommandLine.arguments.contains("enable-testing") {
+        if CommandLine.arguments.contains("uitest") {
             configForUITest()
         }
         #endif
