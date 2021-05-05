@@ -3,7 +3,4 @@ import XCTest
 
 final class NetworkLayerTests: XCTestCase {
     
-    func testExample() {
-        
-    }
 }

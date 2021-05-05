@@ -61,7 +61,13 @@ opt_in_rules:
   - yoda_condition
 
 excluded:
-    - Modules/Package.swift
+    - Scenes/Package.swift
+    - NetworkLayer/Package.swift
+    - DesignSystem/Package.swift
+    - Persistence/Package.swift
+    - Common/Package.swift
+    - CodeGeneration/Package.swift
+    
 
 file_length:
   warning: 500

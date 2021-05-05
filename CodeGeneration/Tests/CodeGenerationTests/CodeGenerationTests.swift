@@ -3,7 +3,4 @@ import XCTest
 
 final class CodeGenerationTests: XCTestCase {
     
-    func testExample() {
-        
-    }
 }

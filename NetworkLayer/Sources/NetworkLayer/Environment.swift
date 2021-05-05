@@ -25,7 +25,6 @@ public struct Environment {
         
         #endif
         
-        
         return base
     }
     
