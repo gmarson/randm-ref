@@ -8,6 +8,7 @@
 
 import UIKit
 import Common
+import SDWebImage
 
 public struct CharacterShortInfoViewModel: ViewCodeModel {
     
@@ -87,7 +88,7 @@ public final class ShortCharacterInfoTableViewCell: UITableViewCell, ViewCodeLif
     
     public override func prepareForReuse() {
         super.prepareForReuse()
-        updateImage(image: #imageLiteral(resourceName: "rick"))
+        profileImage.image = #imageLiteral(resourceName: "rick")
         model = nil
     }
     

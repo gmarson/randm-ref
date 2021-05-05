@@ -19,6 +19,11 @@ let package = Package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing",
             from: "1.9.0"
         ),
+        .package(
+            name: "SDWebImage",
+            url: "https://github.com/SDWebImage/SDWebImage.git",
+            from: "5.1.0"
+        ),
         .package(path: "Common"),
         .package(path: "CodeGeneration")
     ],
@@ -26,7 +31,8 @@ let package = Package(
         .target(
             name: "DesignSystem",
             dependencies: [
-                "Common"
+                "Common",
+                "SDWebImage"
                 //"CodeGeneration" TODO: Figure out how to make it work
             ]
         ),
