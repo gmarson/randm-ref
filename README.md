@@ -11,6 +11,8 @@ Simple app that uses Rick and Morty API
 ## Description
 #### Architecture
 MVVM + Coordinator
+Using SPM to modularize
 #### Tests
 - Unit Tests
+- UI Tests
 - Snapshot Tests (iPhone 11)
