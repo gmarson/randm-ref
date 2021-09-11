@@ -1,3 +1,3 @@
 # NetworkLayer
 
-A description of this package.
+Network layer that was built specifically for the needs of this project

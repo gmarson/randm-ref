@@ -1,3 +1,3 @@
 # Persistence
 
-A description of this package.
+Persistence layer built to store data

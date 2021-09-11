@@ -1,3 +1,3 @@
 # Scenes
 
-A description of this package.
+These are the scenes of the app.

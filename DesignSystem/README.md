@@ -1,3 +1,3 @@
 # DesignSystem
 
-A description of this package.
+Fonts, Colors and components that are used in the app

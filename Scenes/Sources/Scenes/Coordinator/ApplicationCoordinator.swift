@@ -64,8 +64,10 @@ extension ApplicationCoordinator: CoordinatorKeychainNotification {
 extension ApplicationCoordinator: SearchCoordinatorToAppCoordinatorDelegate { }
 extension ApplicationCoordinator: SavedCoordinatorToAppCoordinatorDelegate { }
 
+#if DEBUG
 private extension ApplicationCoordinator {
     func configForUITest() {
         (applicationKeychain as? KeychainHandler)?.deleteDatabase()
     }
 }
+#endif
