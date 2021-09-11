@@ -16,6 +16,7 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
     let rootViewController: UITabBarController
     let searchCharactersCoordinator: SearchCharactersCoordinator
     let savedCharactersCoordinator: SavedCharactersCoordinator
+    let episodesCoordinator: EpisodesCoordinator
     
     var applicationKeychain: KeychainCRUD
     
@@ -28,6 +29,7 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
         rootViewController = UITabBarController()
         searchCharactersCoordinator = .init(tabBarController: rootViewController)
         savedCharactersCoordinator = .init(tabBarController: rootViewController)
+        episodesCoordinator = .init(tabBarController: rootViewController)
     }
     
     public func start() {
@@ -46,6 +48,9 @@ public final class ApplicationCoordinator: Coordinator, AplicationCoordinatorDep
         savedCharactersCoordinator.parentCoordinatorDelegate = self
         savedCharactersCoordinator.start()
         
+        episodesCoordinator.parentCoordinatorDelegate = self
+        episodesCoordinator.start()
+        
         window.makeKeyAndVisible()
     }
 }
@@ -63,6 +68,7 @@ extension ApplicationCoordinator: CoordinatorKeychainNotification {
 
 extension ApplicationCoordinator: SearchCoordinatorToAppCoordinatorDelegate { }
 extension ApplicationCoordinator: SavedCoordinatorToAppCoordinatorDelegate { }
+extension ApplicationCoordinator: EpisodeCoordinatorToAppCoordinatorDelegate { }
 
 #if DEBUG
 private extension ApplicationCoordinator {

@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "DesignSystem",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -33,7 +33,6 @@ let package = Package(
             dependencies: [
                 "Common",
                 "SDWebImage"
-                //"CodeGeneration" TODO: Figure out how to make it work
             ]
         ),
         .testTarget(

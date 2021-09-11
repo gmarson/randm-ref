@@ -43,6 +43,7 @@ public final class CharacterDetailViewController: UIViewController {
         let model = KeychainButtonModel(action: .add)
         let button = KeychainButton(model: model)
         button.delegate = self
+        button.addConstraint(button.heightAnchor.constraint(greaterThanOrEqualToConstant: 45))
         return button
     }()
     

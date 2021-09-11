@@ -26,11 +26,6 @@ public struct RMCharacter: Codable {
     
 }
 
-// TODO: do a DTO
-public struct RMCharacterDTO {
-    
-}
-
 public extension RMCharacter {
     var stringId: String { "\(id)" }
 }

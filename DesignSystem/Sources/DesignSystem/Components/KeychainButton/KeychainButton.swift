@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 public protocol KeychainButtonDelegate: AnyObject {
     func didTouchUpInside(_ action: KeychainButton.Action)
@@ -38,8 +39,8 @@ public final class KeychainButton: ViewCode<KeychainButtonModel> {
     
     public weak var delegate: KeychainButtonDelegate?
     
-    private lazy var button: UIButton = {
-        let button = UIButton()
+    private lazy var button: ShrinkButton = {
+        let button = ShrinkButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
         button.backgroundColor = .clear
@@ -82,5 +83,4 @@ public final class KeychainButton: ViewCode<KeychainButtonModel> {
     @objc private func didTouchUpInside() {
         delegate?.didTouchUpInside(model.action)
     }
-    
 }

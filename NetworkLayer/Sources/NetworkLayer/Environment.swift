@@ -29,4 +29,5 @@ public struct Environment {
     }
     
     public static var characters: String { "character/" }
+    public static var episodes: String { "episode/" }
 }
