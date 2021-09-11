@@ -22,6 +22,8 @@ public struct KeyValueModel: ViewCodeModel {
         self.value = value
     }
 
+    public static var empty: KeyValueModel { .init(key: "", value: "") }
+    
 }
 
 public final class KeyValueView: ViewCode<KeyValueModel> {

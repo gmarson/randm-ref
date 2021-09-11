@@ -26,33 +26,18 @@ public final class CharacterDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 3
-        label.font = UIFont.hugeBold
+        label.font = .hugeBold
+        label.minimumScaleFactor = 0.8
         return label
     }()
     
-    private lazy var originInfoView: KeyValueView = {
-        let model = KeyValueModel(key: "", value: "")
-        let view = KeyValueView(model: model)
-        return view
-    }()
+    private lazy var originInfoView: KeyValueView = { .init(model: .empty) }()
     
-    private lazy var locationInfoView: KeyValueView = {
-        let model = KeyValueModel(key: "", value: "")
-        let view = KeyValueView(model: model)
-        return view
-    }()
+    private lazy var locationInfoView: KeyValueView = { .init(model: .empty) }()
     
-    private lazy var genderInfoView: KeyValueView = {
-        let model = KeyValueModel(key: "", value: "")
-        let view = KeyValueView(model: model)
-        return view
-    }()
+    private lazy var genderInfoView: KeyValueView = { .init(model: .empty) }()
     
-    private lazy var statusInfoView: KeyValueView = {
-        let model = KeyValueModel(key: "", value: "")
-        let view = KeyValueView(model: model)
-        return view
-    }()
+    private lazy var statusInfoView: KeyValueView = { .init(model: .empty) }()
     
     private lazy var favoriteButton: KeychainButton = {
         let model = KeychainButtonModel(action: .add)
@@ -67,7 +52,7 @@ public final class CharacterDetailViewController: UIViewController {
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = CGFloat.defaultPadding
+        stackView.spacing = .defaultPadding
         return stackView
     }()
     
@@ -93,7 +78,7 @@ public final class CharacterDetailViewController: UIViewController {
         view.addConstraints([
             profileName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: .defaultPadding),
             profileName.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .bigPadding),
-            profileName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: .defaultPadding)
+            profileName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -1 * .defaultPadding)
         ])
         
         view.addSubview(profileImage)
